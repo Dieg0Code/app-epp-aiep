@@ -11,7 +11,8 @@ export async function exportarActaPdf({
   estudiantes,
   registros,
 }: DatosActa) {
-  const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: 'a4' })
+  // Vertical, tamaño oficio (21,6 × 33 cm) para imprimir 1:1 en hoja de oficio.
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: [216, 330] })
   const items = taller.epp_items
 
   // ---- Encabezado ----
